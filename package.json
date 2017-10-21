@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/winfredSunga-jw0226/bamazon#readme",
   "dependencies": {
+    "console.table": "^0.9.1",
     "inquirer": "^3.3.0",
     "mysql": "^2.15.0"
   }
