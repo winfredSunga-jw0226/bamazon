@@ -1,0 +1,23 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "an Amazon-like storefront node app",
+  "main": "bamazonCustomer.js",
+  "scripts": {
+    "test": "node bamazomCustomer.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/winfredSunga-jw0226/bamazon.git"
+  },
+  "author": "winfred sunga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/winfredSunga-jw0226/bamazon/issues"
+  },
+  "homepage": "https://github.com/winfredSunga-jw0226/bamazon#readme",
+  "dependencies": {
+    "inquirer": "^3.3.0",
+    "mysql": "^2.15.0"
+  }
+}
