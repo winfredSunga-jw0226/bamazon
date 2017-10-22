@@ -20,7 +20,6 @@ require('console.table');
 
   connection.connect();
 
-//function to display all items available in the store
 function displayAllProducts() {
   //create the connection
   
@@ -64,34 +63,52 @@ function promptToBuyProduct() {
     message : "Please enter the quantity of your purchase : ",
   }
   ]).then(function(response) {
-    console.log(response);
-    console.log(parseInt(response.productId));
-    console.log(parseInt(response.quantity));
-    console.log("Thank you for your order. Now checking inventory......................");
+    console.log("Thank you. Your order is now being processed ...");
     setTimeout( 
       function() { 
-        checkInventory( parseInt(response.productId), parseInt(response.quantity) );
+        processOrder( parseInt(response.productId), parseInt(response.quantity) );
       }
       , 1000);
   });
 }
 
-function checkInventory(productId, quantity) {
+function processOrder(productId, quantity) {
   //sql query to check a product's quantity
   var query = "SELECT price, stock_quantity FROM products WHERE item_id = ?;";
 
+  //execute the query against the database
   connection.query(query, productId, function(error, result) {
     if (error) {
       throw error;
     }
-
+    //if there is enough inventory to fulfill the order
     if (result[0].stock_quantity >= quantity) {
-      console.log("The total cost of your purchase is : " + result[0].price * quantity);
-    } else {
+      //display the total purchase amount
+      console.log("The total amount for your purchase is : " + (result[0].price * quantity).toFixed(2));
+
+      //update the stock qty in the database
+      updateStockQuantity(productId, quantity);
+    } 
+    //else display a message stating that there is insufficient quantity
+    else {
       console.log("Insufficient quantity!!!");
     }
   });
 }
+
+function updateStockQuantity(productId, quantity) {
+  //sql query that will update stock quantity for a specific product
+  var query = "UPDATE products SET stock_quantity = stock_quantity - ? WHERE item_id = ?;";
+
+  connection.query(query, [quantity, productId], function(error, result) {
+    if (error) {
+      throw error;
+    } 
+    //console.log("product inventory updated!");
+    process.exit();
+  })
+}
+
 
 //run the aop
 displayAllProducts();
