@@ -5,25 +5,23 @@ var inquirer = require("inquirer");
 require('console.table');
 
 //require mysql
-  var mysql = require("mysql");
+var mysql = require("mysql");
 
-  //set up the connection to the mysql database
-  var connection = mysql.createConnection(
-    {
-      host : "localhost",
-      user : "root",
-      password : "password",
-      database : "bamazon",
-      multipleStatements: true
-    }
-  );
+//set up the connection to the mysql database
+var connection = mysql.createConnection(
+  {
+    host : "localhost",
+    user : "root",
+    password : "password",
+    database : "bamazon"
+    //multipleStatements: true
+  }
+);
 
-  connection.connect();
+//create the connection
+connection.connect();
 
 function displayAllProducts() {
-  //create the connection
-  
-  
   //sql query to display all available products in the store
   var query = "SELECT item_id, product_name, price FROM products;";
   
