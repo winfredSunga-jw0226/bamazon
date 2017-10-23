@@ -53,12 +53,12 @@ function promptToBuyProduct() {
   {
     name : "productId",
     type : "input",
-    message : "Please enter the ID of the product you would like to purchase : ",
+    message : "Please enter the ID of the product you would like to purchase : "
   },
   {
     name : "quantity",
     type : "input",
-    message : "Please enter the quantity of your purchase : ",
+    message : "Please enter the quantity of your purchase : "
   }
   ]).then(function(response) {
     console.log("Thank you. Your order is now being processed ...");
