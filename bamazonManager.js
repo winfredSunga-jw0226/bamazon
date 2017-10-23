@@ -61,16 +61,16 @@ function displayProductsForSale() {
       throw error;
     }
 
-    var productsArray = results.map(function(results){
+    var productsArray = results.map(function(element){
       return {
-        "Item Id" : results.item_id,
-        "Product Name" : results.product_name,
-        "Price" : results.price,
-        "Quantity" : results.stock_quantity
+        "Item Id" : element.item_id,
+        "Product Name" : element.product_name,
+        "Price" : element.price,
+        "Quantity" : element.stock_quantity
       }
     });
 
-    //console.log(productsArray);
+    //pint report on the console
     console.table("Report : Available Products" , productsArray);
 
     //call the function again in case the manager wants to do something else
@@ -98,7 +98,7 @@ function displayLowInventory() {
       }
     });
 
-    //console.log(productsArray);
+    //print the report on the console
     console.table("Report : Low Inventory Products" , productsArray);
 
     //call the function again in case the manager wants to do something else
@@ -181,4 +181,4 @@ function addNewProduct() {
 }
 
 manageInventory();
-//displayLowInventory();
+

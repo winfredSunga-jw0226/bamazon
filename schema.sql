@@ -1,3 +1,5 @@
+
+--sql scripts for challenge #1
 DROP DATABASE IF EXISTS bamazon;
 
 CREATE DATABASE bamazon;
@@ -7,9 +9,9 @@ USE bamazon;
 DROP TABLE IF EXISTS products;
 
 CREATE TABLE products (
-  item_id INTEGER(11) AUTO_INCREMENT NOT NULL,
+  item_id SMALLINT UNSIGNED AUTO_INCREMENT NOT NULL,
   product_name VARCHAR(1000) NOT NULL,
-  department_name VARCHAR(30) NOT NULL,
+  department_name VARCHAR(50) NOT NULL,
   price DECIMAL(8,2) NOT NULL,
   stock_quantity SMALLINT UNSIGNED,
   PRIMARY KEY (item_id)
@@ -48,8 +50,39 @@ VALUES('Pendleton Women''s Zip Front Hooded Techrain Coat','Clothing, Shoes & Je
 
 SELECT * FROM products;
 
+-- sql scripts for challenge #3
+CREATE TABLE departments (
+  department_id SMALLINT UNSIGNED AUTO_INCREMENT NOT NULL,
+  department_name VARCHAR(50) NOT NULL,
+  over_head_costs MEDIUMINT UNSIGNED NOT NULL,
+  PRIMARY KEY (department_id)
+);
+
+INSERT INTO departments (department_name, over_head_costs)
+VALUES ('Camera & Photo', 100000.00);
+
+INSERT INTO departments (department_name, over_head_costs)
+VALUES ('Movies, Music & Games', 20000.00);
+
+INSERT INTO departments (department_name, over_head_costs)
+VALUES ('TV & Video', 150000.00);
+
+INSERT INTO departments (department_name, over_head_costs)
+VALUES ('Grocery', 5000.00);
+
+INSERT INTO departments (department_name, over_head_costs)
+VALUES ('Clothing, Shoes & Jewelry', 35000.00);
 
 
+ALTER TABLE products
+ADD COLUMN product_sales DECIMAL(10,2) DEFAULT 0.00;
+
+-- query for challenge #3
+SELECT b.department_id AS 'Department ID', b.department_name AS 'Department Name', b.over_head_costs AS 'Overhead Costs', SUM(a.product_sales) AS 'Product Sales' , SUM(a.product_sales - b.over_head_costs) AS 'Total Profit'
+FROM products a
+INNER JOIN departments b
+ON a.department_name = b.department_name
+GROUP BY b.department_id, b.department_name, b.over_head_costs;
 
 
 

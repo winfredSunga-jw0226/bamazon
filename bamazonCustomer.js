@@ -13,8 +13,8 @@ var connection = mysql.createConnection(
     host : "localhost",
     user : "root",
     password : "password",
-    database : "bamazon"
-    //multipleStatements: true
+    database : "bamazon",
+    multipleStatements: true
   }
 );
 
@@ -39,7 +39,7 @@ function displayAllProducts() {
       }
     });
 
-    //console.log(productsArray);
+    //print report on the console
     console.table("Available Products" , productsArray);
   });  
 
@@ -70,27 +70,43 @@ function promptToBuyProduct() {
   });
 }
 
-function processOrder(productId, quantity) {
-  //sql query to check a product's quantity
-  var query = "SELECT price, stock_quantity FROM products WHERE item_id = ?;";
+//function which checks the product's stock quantity
+function checkStockQty(productId, quantity) {
+  //query to check stock qty
+  var query = "SELECT stock_qty FROM products WHERE item_id = ?;";
 
-  //execute the query against the database
+  //execute query against the database
   connection.query(query, productId, function(error, result) {
     if (error) {
       throw error;
-    }
-    //if there is enough inventory to fulfill the order
-    if (result[0].stock_quantity >= quantity) {
-      //display the total purchase amount
-      console.log("The total amount for your purchase is : " + (result[0].price * quantity).toFixed(2));
-
-      //update the stock qty in the database
-      updateStockQuantity(productId, quantity);
     } 
+    //if there is enough stock qty, process order
+    if (result[0].stock_qty >= quantity) {
+      processOrder(productId, quantity);
+    }
     //else display a message stating that there is insufficient quantity
     else {
       console.log("Insufficient quantity!!!");
+      setTimeout(process.exit, 500);
     }
+  });
+}
+
+function processOrder(productId, quantity) {
+  //sql query to check a product's quantity
+  var updateQuery = "UPDATE products SET product_sales = product_sales + (price * ?) WHERE item_id = ?";
+  var selectQuery = "SELECT price FROM products WHERE item_id = ?";
+
+  //execute the query against the database
+  connection.query(`${updateQuery};${selectQuery}`, [quantity, productId, productId],function(error, result) {
+    if (error) {
+      throw error;
+    }
+    //display the total purchase amount
+    console.log("The total amount for your purchase is : " + (result[1][0].price * quantity).toFixed(2));
+
+    //update the stock qty in the database
+    updateStockQuantity(productId, quantity);
   });
 }
 
