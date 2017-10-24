@@ -9,11 +9,12 @@ In this view the user gets two prompts
 
 After providing the input, the app checks against the inventory to determine if there is enough to fulfill the order. If inventory isn't sufficient, the order gets canceled. Otherwise, the oreder gets processed.
 
-#### Instructions
+#### *Instructions*
 
-#### Demo
+#### *Demo*
+
 ### Manager View
-#### Background
+#### *Background*
 In this view a manager is provided with these menu options 
 * View Products for Sale - lists all available products for sale
 * View Low Inventory - lists all products which are low in inventory. The low inventory treshold is currently set to quantity of 5.
@@ -26,12 +27,13 @@ In this view a manager is provided with these menu options
   * Provide product price
   * Provide stock quantity
 
-#### Instructions
+#### *Instructions*
+Using the terminal (Mac) or command line (PC), navigate to your local repo and run this command - `node bamazonCustomer.js`
 
-#### Demo
+#### *Demo*
 
 ### Supervisor View
-#### Background
+#### *Background*
 In this view a supervisor is provided with these menu options
 * View Product Sales by Department - shows a report of total product sales by department along with these relavant information
   * Overhead Cost
@@ -42,9 +44,9 @@ In this view a supervisor is provided with these menu options
   * Department Name
   * Overhead Cost
 
-#### Instructions
+#### *Instructions*
 
-#### Demo
+#### *Demo*
 
 
 
