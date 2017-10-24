@@ -33,6 +33,16 @@ In this view a manager is provided with these menu options
 Using the terminal (Mac) or command line (PC),  navigate to the bamazon local repo directory and run this command - `node bamazonManager.js`. Respond to the series of prompts as per the demo below.
 
 #### *Demo*
+The below gif demos these features of the Manager View
+* View Products for Sale 
+* View Low Inventory
+* Add to Inventory
+
+![Customer View](assets/gifs/manager_view_part1.gif)
+
+The below gif demos the Add New Product feature of the Manager View
+
+![Customer View](assets/gifs/manager_view_part2.gif)
 
 ### Supervisor View
 #### *Background*
