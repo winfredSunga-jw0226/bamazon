@@ -10,7 +10,7 @@ In this view the user gets two prompts
 After providing the input, the app checks against the inventory to determine if there is enough to fulfill the order. If inventory isn't sufficient, the order gets canceled. Otherwise, the oreder gets processed.
 
 #### *Instructions*
-
+Using the terminal(Mac) or command line(PC), navigate to the bamazon local repo directory and run this command - `node bamazonCustomer.js`
 #### *Demo*
 
 ### Manager View
