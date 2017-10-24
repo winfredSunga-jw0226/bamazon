@@ -13,6 +13,7 @@ After providing the input, the app checks against the inventory to determine if 
 Using the terminal(Mac) or command line(PC), navigate to the bamazon local repo directory and run this command - `node bamazonCustomer.js`. Respond to the series of prompts as per the demo below.
 
 #### *Demo*
+![Customer View](assets/gifs/bamazon_customer.gif)
 
 ### Manager View
 #### *Background*
