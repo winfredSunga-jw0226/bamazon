@@ -38,11 +38,11 @@ The below gif demos these features of the Manager View
 * View Low Inventory
 * Add to Inventory
 
-![Customer View](assets/gifs/manager_view_part1.gif)
+![Manager View - Part 1](assets/gifs/manager_view_part1.gif)
 
 The below gif demos the Add New Product feature of the Manager View
 
-![Customer View](assets/gifs/manager_view_part2.gif)
+![Manager View - Part 2](assets/gifs/manager_view_part2.gif)
 
 ### Supervisor View
 #### *Background*
@@ -60,6 +60,12 @@ In this view a supervisor is provided with these menu options
 Using the terminal (Mac) or command line (PC),  navigate to the bamazon local repo directory and run this command - `node bamazonSupervisor.js`.  Respond to the series of prompts as per the demo below.
 
 #### *Demo*
+Tne below gif demos the superview view features
+
+[Supervisor View](assets/gifs/supervisor_view.gif)
+
+### *Technical Details*
+This app is powered by Javascript and NodeJS. The dependencies are - MySql, Inquirer and Console.table packages
 
 
 
