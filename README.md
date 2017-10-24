@@ -62,7 +62,7 @@ Using the terminal (Mac) or command line (PC),  navigate to the bamazon local re
 #### *Demo*
 Tne below gif demos the superview view features
 
-[Supervisor View](assets/gifs/supervisor_view.gif)
+![Supervisor View](assets/gifs/supervisor_view.gif)
 
 ### *Technical Details*
 This app is powered by Javascript and NodeJS. The dependencies are - MySql, Inquirer and Console.table packages
