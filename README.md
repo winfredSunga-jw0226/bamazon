@@ -2,7 +2,7 @@
 An Amazon-like storefront Node Application. This app has 3 different views which perform different tasks - Customer, Manager and Supervisor.
 
 ### Customer View
-#### Background
+#### *Background*
 In this view the user gets two prompts 
 * To provide the id of the product they wish to purchase
 * Provide how many units of the product they wish to buy
