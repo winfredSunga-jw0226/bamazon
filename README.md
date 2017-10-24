@@ -10,7 +10,7 @@ In this view the user gets two prompts
 After providing the input, the app checks against the inventory to determine if there is enough to fulfill the order. If inventory isn't sufficient, the order gets canceled. Otherwise, the oreder gets processed.
 
 #### *Instructions*
-Using the terminal(Mac) or command line(PC), navigate to the bamazon local repo directory and run this command - `node bamazonCustomer.js`
+Using the terminal(Mac) or command line(PC), navigate to the bamazon local repo directory and run this command - `node bamazonCustomer.js`. Respond to the series of prompts as per the demo below.
 
 #### *Demo*
 
@@ -29,7 +29,7 @@ In this view a manager is provided with these menu options
   * Provide stock quantity
 
 #### *Instructions*
-Using the terminal (Mac) or command line (PC),  navigate to the bamazon local repo directory and run this command - `node bamazonManager.js`
+Using the terminal (Mac) or command line (PC),  navigate to the bamazon local repo directory and run this command - `node bamazonManager.js`. Respond to the series of prompts as per the demo below.
 
 #### *Demo*
 
@@ -46,7 +46,7 @@ In this view a supervisor is provided with these menu options
   * Overhead Cost
 
 #### *Instructions*
-Using the terminal (Mac) or command line (PC),  navigate to the bamazon local repo directory and run this command - `node bamazonSupervisor.js`
+Using the terminal (Mac) or command line (PC),  navigate to the bamazon local repo directory and run this command - `node bamazonSupervisor.js`.  Respond to the series of prompts as per the demo below.
 
 #### *Demo*
 
