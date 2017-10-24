@@ -2,13 +2,18 @@
 An Amazon-like storefront Node Application. This app has 3 different views which perform different tasks - Customer, Manager and Supervisor.
 
 ### Customer View
+#### Background
 In this view the user gets two prompts 
 * To provide the id of the product they wish to purchase
 * Provide how many units of the product they wish to buy
 
 After providing the input, the app checks against the inventory to determine if there is enough to fulfill the order. If inventory isn't sufficient, the order gets canceled. Otherwise, the oreder gets processed.
 
+#### Instructions
+
+#### Demo
 ### Manager View
+#### Background
 In this view a manager is provided with these menu options 
 * View Products for Sale - lists all available products for sale
 * View Low Inventory - lists all products which are low in inventory. The low inventory treshold is currently set to quantity of 5.
@@ -21,7 +26,12 @@ In this view a manager is provided with these menu options
   * Provide product price
   * Provide stock quantity
 
+#### Instructions
+
+#### Demo
+
 ### Supervisor View
+#### Background
 In this view a supervisor is provided with these menu options
 * View Product Sales by Department - shows a report of total product sales by department along with these relavant information
   * Overhead Cost
@@ -32,6 +42,9 @@ In this view a supervisor is provided with these menu options
   * Department Name
   * Overhead Cost
 
+#### Instructions
+
+#### Demo
 
 
 
